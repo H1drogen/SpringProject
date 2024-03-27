@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring W1 Assessment</title>
+</head>
+<body>
+	<h1>Find an Employee by their Address</h1>
+
+	<div>
+		<form action="#" th:action="@{/FindByAddress}" method="Post">
+			<div>
+				<label for="address">Address: </label> <input type="text" id="address" th:name="address"
+					placeholder="Enter Employee address">
+			</div>
+			<div>
+				<input type="submit" value="Search for an Employee">
+			</div>
+		</form>
+	</div>
+	
+</body>
+</html>

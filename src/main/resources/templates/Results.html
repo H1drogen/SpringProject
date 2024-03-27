@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring W1 Assessment</title>
+</head>
+<body>
+	<div th:switch="${employees}">
+		<h2 th:case="null">No matching Employees were found!</h2>
+
+		<div th:case="*">
+			<h2>Employees</h2>
+
+			<table>
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Second Name</th>
+						<th>Hire Date</th>
+						<th>Address</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr th:each="employee: ${employees}">
+						<td th:text="${employee.firstName}"></td>
+						<td th:text="${employee.lastName}"></td>
+						<td th:text="${employee.hireDate}"></td>
+						<td th:text="${employee.address}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<p>
+			<a href="/">Go to Index</a>
+		</p>
+	</div>
+</body>
+</html>
